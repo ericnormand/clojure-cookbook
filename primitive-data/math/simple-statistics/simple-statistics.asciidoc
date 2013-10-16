@@ -1,11 +1,13 @@
 === Statistics on Collections of Numbers
+[role="byline"]
+by Ryan Neufeld
 
-===== Problem
+==== Problem
 
 You need to calculate simple statistics like mean, median, mode and standard
 deviation on a collection of numbers.
 
-===== Solution
+==== Solution
 
 Find the _mean_ (average) of a collection by dividing its total by the +count+ of the collection.
 
@@ -78,10 +80,10 @@ retrieve the discrete list of modes.
 ;; -> (:smith :doe)
 ----
 
-////
-Standard deviation:
-Author: Jean Niklas L'orange. Github: hyPiRion
-////
+===== Standard Deviation
+
+[role="byline"]
+by Jean Niklas L'orange
 
 Find the sample _standard deviation_ by completing the following steps:
 
@@ -109,7 +111,7 @@ Find the sample _standard deviation_ by completing the following steps:
 ;; -> 1.4142135623730951
 ----
 
-===== Discussion
+==== Discussion
 
 Both +mean+ and +median+ are fairly easy to reproduce in Clojure, but
 +mode+ requires a bit more effort. +mode+ is a little different than
@@ -120,13 +122,11 @@ compared to its numeric cousins.
 
 Here is a break down of how +mode+ works:
 
-// TODO: Clean up rendering of call-outs.
-
 * <1> +frequencies+ returns a map that tallies the number of times
 each value in +coll+ occurs. This would be something like +{:a 1 :b 2}+
-* <2> +group-by+ with +second+ inverts the +freqs+ map, turning keys into values, merging duplicates into groups. This would turn +{:a 1 :b 1}+ into +{1 [[:a 1] [:b 1]]}+.
+* <2> +group-by+ with +second+ inverts the +freqs+ map, turning keys into values, merging duplicates into groups. This would turn +{:a 1 :b 1}+ into `{1 [[:a 1] [:b 1]]}`.
 * <3> The list of occurrences is now sortable; the last pair in the sorted list will be the modes, or most frequently occurring values.
-* <4> The final step is processing the raw mode pairs into discrete values. Taking +second+ turns +[2 [[:alan 2]]]+ into +[[:alan 2]]+, and +(map first)+ turns that into '(:alan).
+* <4> The final step is processing the raw mode pairs into discrete values. Taking +second+ turns `[2 [[:alan 2]]]` into `[[:alan 2]]`, and +(map first)+ turns that into +'(:alan)+.
 
 The standard deviation measures how much, on average, the individual values in a
 population deviate from the mean: The higher the standard deviation is, the
@@ -147,7 +147,7 @@ number of elements minus one. The result of +32/8+ is +4+.
 sample of a larger population. If we have the complete population (_population_
 standard deviation), we should divide by +total+ instead of +(- total 1)+.
 
-===== See Also
+==== See Also
 
 * See the Wikipedia article on
 http://en.wikipedia.org/wiki/Standard_deviation[Standard deviation] for more

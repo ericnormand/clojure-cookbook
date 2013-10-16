@@ -1,4 +1,12 @@
 [[ch_clojurescript]]
 == ClojureScript
 
-include::cljsbuild.asciidoc[]
+include::cljsbuild/cljsbuild.asciidoc[]
+
+include::dommy/dommy.asciidoc[]
+
+include::c2/c2.asciidoc[]
+
+include::jsinterop/jsinterop.asciidoc[]
+
+include::boids/boids.asciidoc[]

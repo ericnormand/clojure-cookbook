@@ -1,15 +1,13 @@
-////
-:Author: Adam Bard
-:Email: adam@adambard.com
-////
-
+[[sec_webapps_compojure_compojure]]
 === Routing requests with Compojure
+[role="byline"]
+by Adam Bard
 
-===== Problem
+==== Problem
 
 You want an easy way to route your views.
 
-===== Solution
+==== Solution
 
 Use https://github.com/weavejester/compojure[Compojure] to add routing to your app.
 
@@ -42,7 +40,7 @@ Use https://github.com/weavejester/compojure[Compojure] to add routing to your a
  (jetty/run-jetty main-routes {:port 3000}))
 ----
 
-===== Discussion
+==== Discussion
 
 Compojure is a routing library that lets you define routes for your app.
 It does this via the `defroutes` macro, which produces a Ring handler.
@@ -80,7 +78,7 @@ and pass them to a function:
 
 It is important to realize that compojure works on top of Ring. Your views
 should still return Ring response maps (although Compojure will wrap strings
-you return with a basic 200 reponse).
+you return with a basic 200 response).
 
 Compojure provides a few other helpful tools:
 http://weavejester.github.io/compojure/compojure.route.html[`compojure.routes`],
